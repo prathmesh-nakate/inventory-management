@@ -17,6 +17,25 @@ struct Product
 
 vector<Product> products;
 
+void load_Products()
+{
+    ifstream file("inventory.txt");
+    if(!file.is_open())
+        return;
+
+    Product p;
+    while(file >> p.id)
+    {
+        file.ignore();
+        getline(file, p.name);
+        getline(file, p.category);
+        file >> p.quantity >> p.price;
+        file.ignore();
+        products.push_back(p);
+    }
+    file.close();
+}
+
 int main()
 {
     cout<<"Inventory management System"<<endl;
