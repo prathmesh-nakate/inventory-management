@@ -5,5 +5,9 @@ A simple C++ project to manage products and stock.
 A simple console-based Inventory Management System built in **C++**.
 This project helps you manage products, track stock levels and generate reports.
 
+## 🛠️ Built With
+
+- **Language:** C++
+
 ## Status
 Day 1: Initial setup
