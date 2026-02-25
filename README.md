@@ -15,4 +15,6 @@ Day 1: Initial setup
 ## ✨ Features
 
 - 💾 Data saved to file (data persists after closing)
+- ➕ Add new products
+
 
