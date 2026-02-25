@@ -49,6 +49,39 @@ void save_Products()
     file.close();
 }
 
+void add_Products()
+{
+    Product p;
+
+    cout<<"====== Add New Product ======"<<endl;
+    cout<<"Enter Product ID : ";
+    cin>>p.id;
+
+    for(const auto& product : products)
+    {
+        cout<<"Error ! Product ID Already Exists."<<endl;
+        return;
+    }
+
+    cout<<"Enter Name : ";
+    cin.ignore();
+    getline(cin, p.name);
+
+    cout<<"Enter Category : ";
+    getline(cin, p.category);
+    
+    cout<<"Enter Quantity : ";
+    cin>>p.quantity;
+
+    cout<<"Enter Price : ";
+    cin>>p.price;
+
+    products.push_back(p);
+    save_Products();
+
+    cout<<endl<<"Product Added Successfully !"<<endl;
+}
+
 int main()
 {
     cout<<"Inventory management System"<<endl;
