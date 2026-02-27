@@ -17,5 +17,6 @@ Day 1: Initial setup
 - 💾 Data saved to file (data persists after closing)
 - ➕ Add new products
 - 📋 Display all products in a table
+- 🔍 Search product by ID
 
 
