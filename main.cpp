@@ -115,6 +115,39 @@ void display_Products()
     cout<<"Total Products : "<<products.size() <<endl;
 } 
 
+void search_Products()
+{
+    if(products.empty())
+    {
+        cout<<"\n No Products To Search !"<<endl;
+        return;
+    }
+
+    int id;
+    cout<<"Enter Product ID To Search : ";
+    cin>>id;
+
+    bool found = false;
+    for(const auto& p : products)
+    {
+        if(p.id == id)
+        {
+            cout<<"\n =========== Product Found =========== "<<endl;
+            cout<<"ID : "<< p.id << endl;
+            cout<<"Name : "<< p.name << endl;
+            cout<<"Category : "<<p.category << endl;
+            cout<<"Quantity : "<<p.quantity << endl;
+            cout<<"Price : $"<< fixed << setprecision(2) << p.price << endl;
+            found = true;
+            break;
+        }
+    }
+    if(!found)
+    {
+        cout<<"\n Product With ID "<<id<<" Not Found !"<<endl;
+    }
+}
+
 int main()
 {
     cout<<"Inventory management System"<<endl;
