@@ -148,6 +148,59 @@ void search_Products()
     }
 }
 
+void update_Products()
+{
+    if(products.empty())
+    {
+        cout<<"\n No Product To Update !"<<endl;
+        return;
+    }
+
+    int id;
+    cout<<"Enter product ID To Update : ";
+    cin>>id;
+
+    bool found = false;
+    for(auto& p : products)
+    {
+        if(p.id == id)
+        {
+            cout<<"\n Current Details : "<<endl;
+            cout<<"Name : "<<p.name<<endl;
+            cout<<"Category : "<<p.category<<endl;
+            cout<<"Quantity : "<<p.quantity<<endl;
+            cout<<"Price : $"<<fixed<<setprecision(2)<<p.price<<endl;
+
+            cout<<"\n Enter New Details : "<<endl;
+
+            cout<<"Enter Name : ";
+            cin.ignore();
+            getline(cin, p.name);
+
+            cout<<"Enter Category : ";
+            getline(cin, p.category);
+
+            cout<<"Enter Quantiity : ";
+            cin>>p.quantity;
+
+            cout<<"Enter Price : ";
+            cin>>p.price;
+
+            save_Products();
+            {
+                cout<<"\n Product Updated Succesfully !"<<endl;
+                found = true;
+                break;
+            }
+        }
+
+        if(!found)
+        {
+            cout<<"\nProduct With ID "<<id<<" Not Found !"<<endl;
+        }
+    }
+}
+
 int main()
 {
     cout<<"Inventory management System"<<endl;
