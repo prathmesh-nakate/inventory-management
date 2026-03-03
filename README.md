@@ -19,5 +19,6 @@ Day 1: Initial setup
 - 📋 Display all products in a table
 - 🔍 Search product by ID
 - ✏️ Update product details
+- 🗑️ Delete a product
 
 
