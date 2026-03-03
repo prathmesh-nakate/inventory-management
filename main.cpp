@@ -201,6 +201,46 @@ void update_Products()
     }
 }
 
+void delete_Products()
+{
+    if(products.empty())
+    {
+        cout<<"\n No Product To Delete !"<<endl;
+        return;
+    }
+
+    int id;
+    cout<<"Enter Product ID To Delete : ";
+    cin>>id;
+
+    bool found = false;
+    for(size_t i = 0; i < products.size(); i++)
+    {
+        if(products[i].id == id)
+        {
+            cout<<"Delete Product : "<<products[i].name<<"? (y/n) : ";
+            char confirm;
+
+            if(confirm == 'y' || confirm == 'Y')
+            {
+                products.erase(products.begin() + i);
+                save_Products();
+                cout<<"\n Product Deleted Successfully !"<<endl;
+            }
+            else
+            {
+                cout<<"\n Product Deletion Cancelled !"<<endl;
+            }
+            found = true;
+            break;
+        }
+    }
+    if(!found)
+    {
+        cout<<"\n Product With ID"<<id<<" Not Found !"<<endl; 
+    } 
+}
+
 int main()
 {
     cout<<"Inventory management System"<<endl;
