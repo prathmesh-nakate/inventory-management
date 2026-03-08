@@ -241,6 +241,41 @@ void delete_Products()
     } 
 }
 
+void restock_Products()
+{
+    if(products.empty())
+    {
+        cout<<"\n No Product To Restock !"<<endl;
+        return;
+    }
+    int id, qtr;
+    cout<<"Enter Product ID To Restock : ";
+    cin>>id;
+
+    bool found = false;
+    for(auto& p : products)
+    {
+        if(p.id == id)
+        {
+            cout<<"Current Stock : "<<p.quantity<<endl;
+
+            cout<<"Add quantity : ";
+            cin>>qtr;
+
+            p.quantity += qtr;
+            save_Products();
+
+            cout<<"\n Restock Succesfully ! New Stock : "<<p.quantity<<endl;
+            found = true;
+            break;
+        }
+    }
+    if(!found)
+    {
+        cout<<"\n Product With ID "<<id<<" Not Found !"<<endl;
+    }
+}
+
 int main()
 {
     cout<<"Inventory management System"<<endl;
