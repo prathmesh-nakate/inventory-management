@@ -20,5 +20,6 @@ Day 1: Initial setup
 - 🔍 Search product by ID
 - ✏️ Update product details
 - 🗑️ Delete a product
+- 📦 Restock product (add quantity)
 
 
