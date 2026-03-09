@@ -21,5 +21,7 @@ Day 1: Initial setup
 - ✏️ Update product details
 - 🗑️ Delete a product
 - 📦 Restock product (add quantity)
+- 💰 Sell product (deduct quantity + show total)
+
 
 
