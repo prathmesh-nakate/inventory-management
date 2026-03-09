@@ -276,6 +276,51 @@ void restock_Products()
     }
 }
 
+void sell_products()
+{
+    if(products.empty())
+    {
+        cout<<"\n No Product To Sell !"<<endl;
+        return;
+    }
+    int id,qtr;
+    cout<<"Enter Product ID To Sell : ";
+    cin>>id;
+
+    bool found = false;
+    for(const auto& p : products)
+    {
+        if(p.id == id)
+        {
+            cout<<"Product : "<<p.name<<endl;
+            cout<<"Available Stock : "<<p.quantity<<endl;
+            cout<<"Sell Quantity : ";
+            cin>>qtr;
+
+            if(qtr > p.quantity)
+            {
+                cout<<"\n Not Enough Stock Available !"<<endl;
+                return;
+            }
+
+            p.quantity -= qtr;
+            double total qtr * p.price;
+            save_Products();
+
+            cout<<"\n============== Sale Receipt =============="<<endl;
+            cout<<"Units Sold : "<<qtr<<endl;
+            cout<<"Unit Price : $" << fixed << setprecision(2) << p.price << endl;
+            cout<<"Total Price : $" << fixed << setprecision(2) << total << endl;
+            found = true;
+            break
+        }
+    }
+    if(!found)
+    {
+        cout<<"Product With ID "<<id<<" Not Found !"<<endl;
+    }
+}
+
 int main()
 {
     cout<<"Inventory management System"<<endl;
