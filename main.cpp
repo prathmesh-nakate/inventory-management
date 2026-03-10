@@ -321,6 +321,28 @@ void sell_products()
     }
 }
 
+void lowstock_Alert()
+{
+    cout<<"\n =========== Low Stock Alert (Qty <= 10) ==========="<<endl;
+
+    bool found = false;
+    for(const auto& p : products)
+    {
+        if(p.quantity <= 10)
+        {
+            cout<<"Id : "<<p.id<<endl;
+            cout<<"Name : "<<p.name<<endl;
+            cout<<"Stock : "<<p.quantity<<endl;
+
+            found = true;
+        }   
+    }
+    if(!found)
+    {
+        cout<<"All Products Have Sufficient Stock !"<<endl;
+    }
+}
+
 int main()
 {
     cout<<"Inventory management System"<<endl;
