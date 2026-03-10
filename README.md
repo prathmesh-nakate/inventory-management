@@ -22,6 +22,7 @@ Day 1: Initial setup
 - 🗑️ Delete a product
 - 📦 Restock product (add quantity)
 - 💰 Sell product (deduct quantity + show total)
+- ⚠️ Low stock alert (quantity ≤ 5)
 
 
 
