@@ -343,6 +343,32 @@ void lowstock_Alert()
     }
 }
 
+void generate_Report()
+{
+    if(products.empty())
+    {
+        cout<<"\n No Product in The System Yet !"<<endl;
+        return;
+    }
+
+    double total_Value = 0;
+    int    total_Items = 0;
+    
+    display_Products();
+
+    for(const auto& p : products)
+    {
+        total_Value += p.quantity * p.price;
+        total_Items += p.quantity;
+    }
+
+    cout<<"\n ============ Inventory Report ============"<<endl;
+    cout<<"Total Products : "<<products.size()<<endl;
+    cout<<"Total Items    : "<<total_Items<<endl;
+    cout<<"Total Value    : $"<<fixed<<setprecision(2)<<total_Value<<endl;
+
+}
+
 int main()
 {
     cout<<"Inventory management System"<<endl;
