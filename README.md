@@ -23,6 +23,6 @@ Day 1: Initial setup
 - 📦 Restock product (add quantity)
 - 💰 Sell product (deduct quantity + show total)
 - ⚠️ Low stock alert (quantity ≤ 5)
-
+- 📊 Generate full inventory report
 
 
