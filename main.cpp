@@ -371,6 +371,50 @@ void generate_Report()
 
 int main()
 {
-    cout<<"Inventory management System"<<endl;
+   
+   load_Products();
+
+    cout << "======================================================================" << endl;
+    cout << "                     Inventory management System                      " << endl;
+    cout << "======================================================================" << endl;
+
+    while(true)
+    {
+        cout << "\n ------ Menu ------ "    << endl;
+        cout << "1. Add Product"            << endl;
+        cout << "2. Display All Products"   << endl;
+        cout << "3. Search Product"         << endl;
+        cout << "4. Update Product"         << endl;
+        cout << "5. Delete Product"         << endl;
+        cout << "6. Restock Product"        << endl;
+        cout << "7. Sell Product"           << endl;
+        cout << "8. Low Stock Alert"        << endl;
+        cout << "9. Generate Report"        << endl;
+        cout << "0. Exit"                   << endl;
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return 0;
 }
