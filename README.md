@@ -8,6 +8,7 @@ This project helps you manage products, track stock levels and generate reports.
 ## 🛠️ Built With
 
 - **Language:** C++
+- **Concepts:** OOP, File Handling, Structs, Vectors, Functions
 
 ## Status
 Day 1: Initial setup
