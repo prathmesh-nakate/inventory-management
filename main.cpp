@@ -283,36 +283,36 @@ void sell_products()
         cout<<"\n No Product To Sell !"<<endl;
         return;
     }
-    int id,qtr;
+    int id,qty;
     cout<<"Enter Product ID To Sell : ";
     cin>>id;
 
     bool found = false;
-    for(const auto& p : products)
+    for(auto& p : products)
     {
         if(p.id == id)
         {
             cout<<"Product : "<<p.name<<endl;
             cout<<"Available Stock : "<<p.quantity<<endl;
             cout<<"Sell Quantity : ";
-            cin>>qtr;
+            cin>>qty;
 
-            if(qtr > p.quantity)
+            if(qty > p.quantity)
             {
                 cout<<"\n Not Enough Stock Available !"<<endl;
                 return;
             }
 
-            p.quantity -= qtr;
-            double total qtr * p.price;
+            p.quantity -= qty;
+            double total = qty * p.price;
             save_Products();
 
             cout<<"\n============== Sale Receipt =============="<<endl;
-            cout<<"Units Sold : "<<qtr<<endl;
+            cout<<"Units Sold : "<<qty<<endl;
             cout<<"Unit Price : $" << fixed << setprecision(2) << p.price << endl;
             cout<<"Total Price : $" << fixed << setprecision(2) << total << endl;
             found = true;
-            break
+            break;
         }
     }
     if(!found)
@@ -398,14 +398,14 @@ int main()
 
         switch(choice)
         {
-            case 1 : add_products();            break;
-            case 2 : display_Allproducts();     break;
-            case 3 : Search_products();         break;
-            case 4 : update_products();         break;
-            case 5 : delete_products();         break;
-            case 6 : restock_products();        break;
+            case 1 : add_Products();            break;
+            case 2 : display_Products();        break;
+            case 3 : search_Products();         break;
+            case 4 : update_Products();         break;
+            case 5 : delete_Products();         break;
+            case 6 : restock_Products();        break;
             case 7 : sell_products();           break;
-            case 8 : lowStock_Alert();          break;
+            case 8 : lowstock_Alert();          break;
             case 9 : generate_Report();         break;
             case 0 :
                 cout<<"Thanks For Using Inventory Management System. Goodbye !"<<endl;
