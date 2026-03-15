@@ -53,15 +53,18 @@ void add_Products()
 {
     Product p;
 
-    cout<<"====== Add New Product ======"<<endl;
-    cout<<"Enter Product ID : ";
+    cout<<"\n====== Add New Product ======"<<endl;
+    cout<<"\nEnter Product ID : ";
     cin>>p.id;
 
     for(const auto& product : products)
+{
+    if(product.id == p.id)   
     {
         cout<<"Error ! Product ID Already Exists."<<endl;
         return;
     }
+}
 
     cout<<"Enter Name : ";
     cin.ignore();
@@ -73,13 +76,13 @@ void add_Products()
     cout<<"Enter Quantity : ";
     cin>>p.quantity;
 
-    cout<<"Enter Price : ";
+    cout<<"Enter Price For 1 Piece : ";
     cin>>p.price;
 
     products.push_back(p);
     save_Products();
 
-    cout<<endl<<"Product Added Successfully !"<<endl;
+    cout<<endl<<"\nProduct Added Successfully !"<<endl;
 }
 
 void display_Products()
@@ -108,11 +111,11 @@ void display_Products()
                 << setw(29) << p.name
                 << setw(15) << p.category
                 << setw(10) << p.quantity
-                << "$" << fixed << setprecision(2) << p.price <<endl;
+                << " $" << fixed << setprecision(2) << p.price <<endl;
     }
 
     cout<<"======================================================================================"<<endl;
-    cout<<"Total Products : "<<products.size() <<endl;
+    cout<<"\nTotal Products : "<<products.size() <<endl;
 } 
 
 void search_Products()
@@ -124,7 +127,7 @@ void search_Products()
     }
 
     int id;
-    cout<<"Enter Product ID To Search : ";
+    cout<<"\nEnter Product ID To Search : ";
     cin>>id;
 
     bool found = false;
@@ -137,7 +140,7 @@ void search_Products()
             cout<<"Name : "<< p.name << endl;
             cout<<"Category : "<<p.category << endl;
             cout<<"Quantity : "<<p.quantity << endl;
-            cout<<"Price : $"<< fixed << setprecision(2) << p.price << endl;
+            cout<<"Price :  $"<< fixed << setprecision(2) << p.price << endl;
             found = true;
             break;
         }
@@ -157,7 +160,7 @@ void update_Products()
     }
 
     int id;
-    cout<<"Enter product ID To Update : ";
+    cout<<"\nEnter product ID To Update : ";
     cin>>id;
 
     bool found = false;
@@ -166,14 +169,14 @@ void update_Products()
         if(p.id == id)
         {
             cout<<"\n Current Details : "<<endl;
-            cout<<"Name : "<<p.name<<endl;
+            cout<<"\nName : "<<p.name<<endl;
             cout<<"Category : "<<p.category<<endl;
             cout<<"Quantity : "<<p.quantity<<endl;
             cout<<"Price : $"<<fixed<<setprecision(2)<<p.price<<endl;
 
             cout<<"\n Enter New Details : "<<endl;
 
-            cout<<"Enter Name : ";
+            cout<<"\nEnter Name : ";
             cin.ignore();
             getline(cin, p.name);
 
@@ -183,7 +186,7 @@ void update_Products()
             cout<<"Enter Quantiity : ";
             cin>>p.quantity;
 
-            cout<<"Enter Price : ";
+            cout<<"Enter Price For 1 Piece : ";
             cin>>p.price;
 
             save_Products();
@@ -210,7 +213,7 @@ void delete_Products()
     }
 
     int id;
-    cout<<"Enter Product ID To Delete : ";
+    cout<<"\nEnter Product ID To Delete : ";
     cin>>id;
 
     bool found = false;
@@ -249,7 +252,7 @@ void restock_Products()
         return;
     }
     int id, qtr;
-    cout<<"Enter Product ID To Restock : ";
+    cout<<"\nEnter Product ID To Restock : ";
     cin>>id;
 
     bool found = false;
@@ -284,7 +287,7 @@ void sell_products()
         return;
     }
     int id,qty;
-    cout<<"Enter Product ID To Sell : ";
+    cout<<"\nEnter Product ID To Sell : ";
     cin>>id;
 
     bool found = false;
@@ -308,7 +311,7 @@ void sell_products()
             save_Products();
 
             cout<<"\n============== Sale Receipt =============="<<endl;
-            cout<<"Units Sold : "<<qty<<endl;
+            cout<<"\nUnits Sold : "<<qty<<endl;
             cout<<"Unit Price : $" << fixed << setprecision(2) << p.price << endl;
             cout<<"Total Price : $" << fixed << setprecision(2) << total << endl;
             found = true;
@@ -317,7 +320,7 @@ void sell_products()
     }
     if(!found)
     {
-        cout<<"Product With ID "<<id<<" Not Found !"<<endl;
+        cout<<"\nProduct With ID "<<id<<" Not Found !"<<endl;
     }
 }
 
@@ -330,7 +333,7 @@ void lowstock_Alert()
     {
         if(p.quantity <= 10)
         {
-            cout<<"Id : "<<p.id<<endl;
+            cout<<"\nId : "<<p.id<<endl;
             cout<<"Name : "<<p.name<<endl;
             cout<<"Stock : "<<p.quantity<<endl;
 
@@ -339,7 +342,7 @@ void lowstock_Alert()
     }
     if(!found)
     {
-        cout<<"All Products Have Sufficient Stock !"<<endl;
+        cout<<"\nAll Products Have Sufficient Stock !"<<endl;
     }
 }
 
@@ -363,7 +366,7 @@ void generate_Report()
     }
 
     cout<<"\n ============ Inventory Report ============"<<endl;
-    cout<<"Total Products : "<<products.size()<<endl;
+    cout<<"\nTotal Products : "<<products.size()<<endl;
     cout<<"Total Items    : "<<total_Items<<endl;
     cout<<"Total Value    : $"<<fixed<<setprecision(2)<<total_Value<<endl;
 
@@ -393,7 +396,7 @@ int main()
         cout << "0. Exit"                   << endl;
 
         int choice;
-        cout<<"Enter Your Choice : ";
+        cout<<"\nEnter Your Choice : ";
         cin>>choice;
 
         switch(choice)

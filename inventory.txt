@@ -1,0 +1,8 @@
+1
+Cups
+Kitchen
+80 1000
+2
+Sofa
+Furniture
+75 10000
