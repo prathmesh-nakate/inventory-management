@@ -392,29 +392,29 @@ int main()
         cout << "9. Generate Report"        << endl;
         cout << "0. Exit"                   << endl;
 
+        int choice;
+        cout<<"Enter Your Choice : ";
+        cin>>choice;
 
+        switch(choice)
+        {
+            case 1 : add_products();            break;
+            case 2 : display_Allproducts();     break;
+            case 3 : Search_products();         break;
+            case 4 : update_products();         break;
+            case 5 : delete_products();         break;
+            case 6 : restock_products();        break;
+            case 7 : sell_products();           break;
+            case 8 : lowStock_Alert();          break;
+            case 9 : generate_Report();         break;
+            case 0 :
+                cout<<"Thanks For Using Inventory Management System. Goodbye !"<<endl;
+                return 0;
 
-
+                default :
+                    cout<<"\n Invalid Choice. Please Try Again."<<endl;
+        }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     return 0;
 }
