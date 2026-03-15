@@ -26,4 +26,13 @@ Day 1: Initial setup
 - ⚠️ Low stock alert (quantity ≤ 5)
 - 📊 Generate full inventory report
 
+## 📁 Project Structure
+
+```
+inventory-management/
+│
+├── main.cpp          # Main source code
+├── inventory.txt     # Auto-generated data file
+└── README.md         # Project documentation
+```
 
