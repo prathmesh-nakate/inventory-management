@@ -3,6 +3,10 @@ Cups
 Kitchen
 80 1000
 2
-Sofa
+Sofa And Bed
 Furniture
-75 10000
+100 20000
+3
+Milk Pouches
+plastic
+1000 100

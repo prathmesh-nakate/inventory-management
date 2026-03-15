@@ -295,7 +295,7 @@ void sell_products()
     {
         if(p.id == id)
         {
-            cout<<"Product : "<<p.name<<endl;
+            cout<<"\nProduct : "<<p.name<<endl;
             cout<<"Available Stock : "<<p.quantity<<endl;
             cout<<"Sell Quantity : ";
             cin>>qty;
@@ -312,7 +312,7 @@ void sell_products()
 
             cout<<"\n============== Sale Receipt =============="<<endl;
             cout<<"\nUnits Sold : "<<qty<<endl;
-            cout<<"Unit Price : $" << fixed << setprecision(2) << p.price << endl;
+            cout<<"Unit Price of one piece : $" << fixed << setprecision(2) << p.price << endl;
             cout<<"Total Price : $" << fixed << setprecision(2) << total << endl;
             found = true;
             break;
@@ -384,7 +384,7 @@ int main()
     while(true)
     {
         cout << "\n ------ Menu ------ "    << endl;
-        cout << "1. Add Product"            << endl;
+        cout << "\n1. Add Product"            << endl;
         cout << "2. Display All Products"   << endl;
         cout << "3. Search Product"         << endl;
         cout << "4. Update Product"         << endl;
