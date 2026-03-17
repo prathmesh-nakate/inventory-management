@@ -223,6 +223,8 @@ void delete_Products()
         {
             cout<<"Delete Product : "<<products[i].name<<"? (y/n) : ";
             char confirm;
+            cin >> ws;       
+            cin >> confirm;
 
             if(confirm == 'y' || confirm == 'Y')
             {
