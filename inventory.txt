@@ -1,12 +1,16 @@
 1
 Cups
 Kitchen
-80 1000
+100 1000
 2
-Sofa And Bed
-Furniture
-100 20000
+sofa
+furniture
+150 25000
 3
 Milk Pouches
 plastic
 1000 100
+4
+Dolls
+Soft Toys
+100 50

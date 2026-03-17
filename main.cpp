@@ -100,7 +100,7 @@ void display_Products()
                 << setw(29) << "Name"
                 << setw(15) << "Category"
                 << setw(10) << "Quantity"
-                << setw(10) << "Price" <<endl;
+                << setw(10) << " Price" <<endl;
 
 
     cout<<"======================================================================================"<<endl;
@@ -260,9 +260,11 @@ void restock_Products()
     {
         if(p.id == id)
         {
+            cout<<"\nName of Product : "<<p.name<<endl;
+
             cout<<"Current Stock : "<<p.quantity<<endl;
 
-            cout<<"Add quantity : ";
+            cout<<"\nAdd quantity : ";
             cin>>qtr;
 
             p.quantity += qtr;
